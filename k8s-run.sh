@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #create volume
 sudo mkdir -p /data/app
 
