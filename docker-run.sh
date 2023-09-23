@@ -8,3 +8,5 @@ docker image list
 
 #run containers
 docker run -d -p 80:80 nginx/server
+
+sudo chown root:docker /var/run/docker.sock
