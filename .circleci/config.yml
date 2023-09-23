@@ -13,9 +13,8 @@ jobs:
           name: run docker
           command: |
             cd ..
-            ls
             # chmod u+x docker-run.sh
-            ./docker-run.sh
+            ../docker-run.sh
   k8s_job:
     docker:
       - image: cimg/base:stable
@@ -24,9 +23,8 @@ jobs:
           name: run kubernetes
           command: |
             cd ..
-            ls
             # chmod u+x k8s-run.sh
-            ./k8s-run.sh
+            ../k8s-run.sh
 
 workflows:
   default:
