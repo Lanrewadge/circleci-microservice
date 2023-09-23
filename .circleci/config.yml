@@ -12,6 +12,7 @@ jobs:
       - run:
           name: run docker
           command: |
+            cd ..
             chmod u+x docker-run.sh
             ./docker-run.sh
   k8s_job:
@@ -21,6 +22,7 @@ jobs:
       - run:
           name: run kubernetes
           command: |
+            cd ..
             chmod u+x k8s-run.sh
             ./k8s-run.sh
 
@@ -29,4 +31,3 @@ workflows:
      jobs:
       - docker_job
       - k8s_job
-      
