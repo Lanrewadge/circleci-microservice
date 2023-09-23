@@ -1,8 +1,8 @@
 version: 2.1
 
-orbs:
-  docker: circleci/docker@2.3.0
-  kubernetes: circleci/kubernetes@1.3.1
+# orbs:
+#   docker: circleci/docker@2.3.0
+#   kubernetes: circleci/kubernetes@1.3.1
 
 jobs:
   docker_job:
@@ -12,9 +12,8 @@ jobs:
       - run:
           name: run docker
           command: |
-            cd ..
-            # chmod u+x docker-run.sh
-            ../docker-run.sh
+            chmod u+x docker-run.sh
+            ./docker-run.sh
   k8s_job:
     docker:
       - image: cimg/base:stable
@@ -22,11 +21,11 @@ jobs:
       - run:
           name: run kubernetes
           command: |
-            cd ..
-            # chmod u+x k8s-run.sh
-            ../k8s-run.sh
+            chmod u+x k8s-run.sh
+            ./k8s-run.sh
 
 workflows:
+  version: 2
   default:
      jobs:
       - docker_job
